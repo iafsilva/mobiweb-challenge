@@ -13,7 +13,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -48,4 +47,22 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.koin.test)
+}
+
+// Define a task to copy the release AAR file
+val copyAar by tasks.registering(Copy::class) {
+    dependsOn(tasks.named("bundleReleaseAar")) // Make sure the release task runs before this one
+
+    from(listOf(layout.buildDirectory.asFile.get().absolutePath, "outputs", "aar").joinToString(File.separator))
+
+    into("$rootDir/dist")
+
+    rename("${project.name}-release.aar", "mobiweb_iafsilva_MobileSdk.aar")
+}
+
+afterEvaluate {
+    // Ensure that the copyAar task runs after the bundleReleaseAar task
+    tasks.named("bundleReleaseAar") {
+        finalizedBy(copyAar)
+    }
 }

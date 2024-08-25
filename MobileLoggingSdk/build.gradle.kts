@@ -4,3 +4,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     alias(libs.plugins.android.library) apply false
 }
+
+allprojects {
+    group = "com.ivoafsilva.mobiweb.mobilesdk"
+    version = "1.0-alpha"
+}
