@@ -35,8 +35,19 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    testImplementation(libs.junit)
+    // Network
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
+    // Dependency Injection
+    implementation(libs.koin.core)
+
+    // Unit Testing
+    testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.koin.test)
+
+    // Instrumentation Testing
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
