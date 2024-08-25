@@ -9,3 +9,15 @@
 -keepclassmembers,allowobfuscation class * {
  @com.google.gson.annotations.SerializedName <fields>;
 }
+
+# Keep the MobileSdk class and all its methods
+-keep class com.ivoafsilva.mobiweb.mobilesdk.MobileSdk { *; }
+
+# Keep classes used by your library but allow obfuscation
+-keep class com.ivoafsilva.mobiweb.mobilesdk.** { *; }
+
+# Keep Koin-related classes and methods
+-keep class org.koin.core.** { *; }
+
+# Preserve attributes needed for reflection
+-keepattributes Signature, *Annotation*
