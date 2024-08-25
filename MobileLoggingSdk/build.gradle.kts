@@ -5,7 +5,13 @@ plugins {
     alias(libs.plugins.android.library) apply false
 }
 
+buildscript {
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.5.1")
+    }
+}
+
 allprojects {
     group = "com.ivoafsilva.mobiweb.mobilesdk"
-    version = "1.0-alpha"
+    version = "1.0.0-alpha"
 }

@@ -1,5 +1,6 @@
 package com.ivoafsilva.mobiweb.mobilesdk.di
 
+import com.ivoafsilva.mobiweb.mobilesdk.MobileSdk
 import com.ivoafsilva.mobiweb.mobilesdk.common.Logger
 import com.ivoafsilva.mobiweb.mobilesdk.network.LoggingRepo
 import com.ivoafsilva.mobiweb.mobilesdk.network.api.CloudFunctionApi
@@ -10,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- * Koin module providing the necessary dependencies for the Mobile SDK.
+ * Koin module providing the necessary dependencies for the Mobile SDK and the [MobileSdk] itself.
  *
  * **Usage**:
  * This module should be loaded into Koin's application context to provide the necessary dependencies.
@@ -44,4 +45,9 @@ public val mobileSdkModule: Module = module {
      * This implementation uses the provided [CloudFunctionApi] and [Logger] to interact with the cloud functions API.
      */
     single<LoggingRepo> { CloudFunctionsRepoImpl(apiService = get(), logger = get()) }
+
+    /**
+     * Exposed our [MobileSdk] entry-point to the world
+     */
+    single { MobileSdk() }
 }

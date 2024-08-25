@@ -62,6 +62,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    // Network
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
     // Dependency Injection
     implementation(libs.koin.core)
     implementation(libs.koin.android)

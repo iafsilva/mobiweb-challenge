@@ -21,3 +21,8 @@
 
 # Preserve attributes needed for reflection
 -keepattributes Signature, *Annotation*
+
+# Keep all classes related to networking
+-keep class retrofit2.** { *; }
+-keep class okhttp3.** { *; }
+-keep class okio.** { *; }

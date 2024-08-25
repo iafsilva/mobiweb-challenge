@@ -33,6 +33,7 @@ android {
 
 dependencies {
 
+    // AndroidX ktx
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
 
@@ -50,7 +51,7 @@ dependencies {
 }
 
 // Define a task to copy the release AAR file
-val copyAar by tasks.registering(Copy::class) {
+val copyAarToDistFolder by tasks.registering(Copy::class) {
     dependsOn(tasks.named("bundleReleaseAar")) // Make sure the release task runs before this one
 
     from(listOf(layout.buildDirectory.asFile.get().absolutePath, "outputs", "aar").joinToString(File.separator))
@@ -63,6 +64,6 @@ val copyAar by tasks.registering(Copy::class) {
 afterEvaluate {
     // Ensure that the copyAar task runs after the bundleReleaseAar task
     tasks.named("bundleReleaseAar") {
-        finalizedBy(copyAar)
+        finalizedBy(copyAarToDistFolder)
     }
 }
