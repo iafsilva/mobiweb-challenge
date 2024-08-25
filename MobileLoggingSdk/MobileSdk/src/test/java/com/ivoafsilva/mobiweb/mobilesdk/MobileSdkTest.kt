@@ -1,5 +1,7 @@
 package com.ivoafsilva.mobiweb.mobilesdk
 
+import com.ivoafsilva.mobiweb.mobilesdk.common.Logger
+import com.ivoafsilva.mobiweb.mobilesdk.common.TestLogger
 import com.ivoafsilva.mobiweb.mobilesdk.network.LoggingRepo
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -19,6 +21,7 @@ class MobileSdkTest : KoinTest {
 
     private val loggingRepo: LoggingRepo = mockk()
     private val mobileSdk: MobileSdk by inject()
+    private val testLogger = Logger().apply { set(TestLogger) }
 
     @Before
     fun setUp() {
@@ -27,6 +30,7 @@ class MobileSdkTest : KoinTest {
         startKoin {
             modules(
                 module {
+                    single { testLogger }
                     single { loggingRepo }
                     single { MobileSdk() }
                 }

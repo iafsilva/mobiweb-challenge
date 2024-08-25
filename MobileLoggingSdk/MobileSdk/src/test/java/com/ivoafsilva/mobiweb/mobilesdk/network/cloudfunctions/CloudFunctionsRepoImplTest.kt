@@ -1,5 +1,6 @@
 package com.ivoafsilva.mobiweb.mobilesdk.network.cloudfunctions
 
+import com.ivoafsilva.mobiweb.mobilesdk.common.Logger
 import com.ivoafsilva.mobiweb.mobilesdk.network.api.CloudFunctionApi
 import com.ivoafsilva.mobiweb.mobilesdk.network.model.RequestBody
 import io.mockk.coEvery
@@ -17,10 +18,11 @@ class CloudFunctionsRepoImplTest {
 
     private lateinit var repo: CloudFunctionsRepoImpl
     private val api: CloudFunctionApi = mockk()
+    private val logger: Logger = Logger()
 
     @Before
     fun setUp() {
-        repo = CloudFunctionsRepoImpl(api)
+        repo = CloudFunctionsRepoImpl(api, logger)
     }
 
     @Test

@@ -1,5 +1,6 @@
 package com.ivoafsilva.mobiweb.mobilesdk.di
 
+import com.ivoafsilva.mobiweb.mobilesdk.common.Logger
 import com.ivoafsilva.mobiweb.mobilesdk.network.LoggingRepo
 import com.ivoafsilva.mobiweb.mobilesdk.network.api.CloudFunctionApi
 import com.ivoafsilva.mobiweb.mobilesdk.network.cloudfunctions.CloudFunctionsRepoImpl
@@ -14,6 +15,8 @@ private const val BASE_URL = "https://us-central1-mobilesdklogging.cloudfunction
 
 public val mobileSdkModule: Module = module {
 
+    single { Logger() }
+
     single {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -22,5 +25,5 @@ public val mobileSdkModule: Module = module {
             .create(CloudFunctionApi::class.java)
     }
 
-    single<LoggingRepo> { CloudFunctionsRepoImpl(get()) }
+    single<LoggingRepo> { CloudFunctionsRepoImpl(apiService = get(), logger = get()) }
 }
