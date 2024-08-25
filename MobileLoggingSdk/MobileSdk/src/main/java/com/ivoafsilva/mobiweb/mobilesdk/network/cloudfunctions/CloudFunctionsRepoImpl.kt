@@ -31,7 +31,7 @@ internal class CloudFunctionsRepoImpl(
             return Result.success(Unit)
 
         } catch (e: Exception) {
-            logger.get()?.d(TAG, "saveLog", "api threw $e")
+            logger.get()?.e(TAG, "saveLog", "api threw $e")
             return Result.failure(e)
         }
     }

@@ -9,21 +9,39 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-private const val BASE_URL = "https://us-central1-mobilesdklogging.cloudfunctions.net/"
-
-
+/**
+ * Koin module providing the necessary dependencies for the Mobile SDK.
+ *
+ * **Usage**:
+ * This module should be loaded into Koin's application context to provide the necessary dependencies.
+ * Ensure that Koin is properly initialized and this module is included in the Koin setup.
+ *
+ * @sample
+ *    startKoin {
+ *        androidContext(this@MyApplication)
+ *        modules(mobileSdkModule)
+ *    }
+ */
 public val mobileSdkModule: Module = module {
 
+    /**
+     * The `Logger` instance is used throughout the SDK to handle internal logging operations.
+     */
     single { Logger() }
 
+    /**
+     * Configures Retrofit to create an implementation of the [CloudFunctionApi] interface for making network requests.
+     */
     single {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(CloudFunctionApi.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(CloudFunctionApi::class.java)
     }
 
+    /**
+     * This implementation uses the provided [CloudFunctionApi] and [Logger] to interact with the cloud functions API.
+     */
     single<LoggingRepo> { CloudFunctionsRepoImpl(apiService = get(), logger = get()) }
 }
