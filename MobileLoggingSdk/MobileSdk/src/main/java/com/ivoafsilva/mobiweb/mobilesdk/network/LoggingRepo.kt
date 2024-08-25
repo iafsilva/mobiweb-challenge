@@ -1,6 +1,6 @@
 package com.ivoafsilva.mobiweb.mobilesdk.network
 
-interface LoggingRepo {
+internal interface LoggingRepo {
 
     suspend fun saveLog(message: String): Result<Unit>
 

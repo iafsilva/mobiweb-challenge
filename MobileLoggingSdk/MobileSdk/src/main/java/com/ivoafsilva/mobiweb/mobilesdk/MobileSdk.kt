@@ -5,11 +5,11 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 @Suppress("unused")
-class MobileSdk : KoinComponent {
+public class MobileSdk : KoinComponent {
 
     private val loggingRepo: LoggingRepo by inject()
 
-    suspend fun logMessage(message: String): Boolean {
+    public suspend fun logMessage(message: String): Boolean {
         return try {
             loggingRepo.saveLog(message)
             true

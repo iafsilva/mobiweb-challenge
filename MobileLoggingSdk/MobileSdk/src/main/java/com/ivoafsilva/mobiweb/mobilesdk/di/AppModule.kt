@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 private const val BASE_URL = "https://us-central1-mobilesdklogging.cloudfunctions.net/"
 
 
-val mobileSdkModule: Module = module {
+public val mobileSdkModule: Module = module {
 
     single {
         Retrofit.Builder()
