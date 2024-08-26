@@ -1,0 +1,19 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common////PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/index.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common/LogContract///PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/-log-contract/index.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common/LogContract/d/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/-log-contract/d.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common/LogContract/e/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/-log-contract/e.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common/LogContract/i/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/-log-contract/i.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common/LogContract/v/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/-log-contract/v.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.common/LogContract/w/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.common/-log-contract/w.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.di////PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.di/index.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk.di//mobileSdkModule/#/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk.di/mobile-sdk-module.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk////PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk/index.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk/MobileSdk///PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk/-mobile-sdk/index.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk/MobileSdk/enableLogging/#com.ivoafsilva.mobiweb.mobilesdk.common.LogContract/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk/-mobile-sdk/enable-logging.html
+$dokka.location:com.ivoafsilva.mobiweb.mobilesdk/MobileSdk/logMessage/#kotlin.String/PointingToDeclaration/-mobile-sdk/com.ivoafsilva.mobiweb.mobilesdk/-mobile-sdk/log-message.html
+com.ivoafsilva.mobiweb.mobilesdk
+com.ivoafsilva.mobiweb.mobilesdk.common
+com.ivoafsilva.mobiweb.mobilesdk.di
+

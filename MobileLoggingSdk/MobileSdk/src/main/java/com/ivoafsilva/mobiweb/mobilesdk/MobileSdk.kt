@@ -11,10 +11,12 @@ import org.koin.core.component.inject
  *
  * It facilitates logging operations by providing easy-to-use methods to store log messages.
  *
- * @constructor Creates an instance of `MobileSdk` with injected dependencies.
- *
+ * Get an instance of [MobileSdk] by doing
+ * ```kotlin
+ * val sdk by inject()
+ * ```
  */
-public class MobileSdk : KoinComponent {
+public class MobileSdk internal constructor(): KoinComponent {
 
     private companion object {
         private const val TAG = "MobileSdk"
@@ -26,7 +28,8 @@ public class MobileSdk : KoinComponent {
 
     /**
      * Enables logging for this SDK.
-     * After providing a [contract], this SDK will call the appropriate [contract] methods in order to log its' internal info.
+     *
+     * After providing a [contract] this SDK will call the appropriate [contract] methods in order to log its' internal info.
      *
      * @throws IllegalArgumentException if the logger is not properly initialized after setting the contract.
      *

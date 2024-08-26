@@ -11,17 +11,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- * Koin module providing the necessary dependencies for the Mobile SDK and the [MobileSdk] itself.
+ * Koin module providing the necessary dependencies for the Mobile SDK.
+ * It also exposes the [MobileSdk] itself.
  *
  * **Usage**:
- * This module should be loaded into Koin's application context to provide the necessary dependencies.
- * Ensure that Koin is properly initialized and this module is included in the Koin setup.
- *
- * @sample
+ * This module should be loaded into Koin's application context as follows.
+ * ```kotlin
  *    startKoin {
  *        androidContext(this@MyApplication)
  *        modules(mobileSdkModule)
  *    }
+ * ```
  */
 public val mobileSdkModule: Module = module {
 
