@@ -42,7 +42,7 @@ class CloudFunctionsRepoImplTest {
     }
 
     @Test
-    fun `saveLog should throw an exception when the API call fails`() = runBlocking {
+    fun `saveLog should return failure with exception when the API call fails`() = runBlocking {
         val message = "Test Message"
         val requestBody = RequestBody(message)
 
@@ -56,11 +56,11 @@ class CloudFunctionsRepoImplTest {
 
         // Verify exception message is the expected same
         assertNotNull(result.exceptionOrNull())
-        assertEquals(result.exceptionOrNull()!!.message, "Failed to log message")
+        assertEquals(result.exceptionOrNull()!!.message, "Failed to save log message")
     }
 
     @Test
-    fun `saveLog should throw an exception when the API call throws`() = runBlocking {
+    fun `saveLog should return failure with exception when the API call throws`() = runBlocking {
         val message = "Test Message"
         val requestBody = RequestBody(message)
 

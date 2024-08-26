@@ -51,6 +51,20 @@ class MobileSdkTest : KoinTest {
         coVerify { loggingRepo.saveLog(message) }
     }
 
+
+    @Test
+    fun `logMessage should return false when loggingRepo fails to save message`(): Unit = runBlocking {
+        val message = "Test Message"
+
+        // Mock the loggingRepo to succeed
+        coEvery { loggingRepo.saveLog(message) } returns Result.failure(Exception("Can't reach server"))
+
+        val result = mobileSdk.logMessage(message)
+
+        assertFalse(result)
+        coVerify { loggingRepo.saveLog(message) }
+    }
+
     @Test
     fun `logMessage should return false when loggingRepo throws an exception`() = runBlocking {
         val message = "Test Message"

@@ -24,7 +24,7 @@ internal class CloudFunctionsRepoImpl(
 
             if (!response.isSuccessful) {
                 logger.get()?.d(TAG, "saveLog", "api returned failure")
-                return Result.failure(Exception("Failed to log message"))
+                return Result.failure(Exception("Failed to save log message"))
             }
 
             logger.get()?.d(TAG, "saveLog", "api returned success")

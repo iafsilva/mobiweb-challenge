@@ -64,7 +64,10 @@ public class MobileSdk internal constructor(): KoinComponent {
         return try {
             logger.get()?.v(TAG, "logMessage", "calling repo")
 
-            loggingRepo.saveLog(message)
+            val result = loggingRepo.saveLog(message)
+            if (result.isFailure) {
+                throw result.exceptionOrNull()!!
+            }
 
             logger.get()?.d(TAG, "logMessage", "returning success")
             true
